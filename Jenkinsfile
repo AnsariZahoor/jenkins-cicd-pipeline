@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         AWS_REGION   = 'ap-south-1'
-        ECR_REGISTRY = '860201979633.dkr.ecr.ap-south-1.amazonaws.com'
+        ECR_REGISTRY = '<ACCOUNT_ID>.dkr.ecr.ap-south-1.amazonaws.com'
         ECR_REPO     = 'fastapi-app'
         ECS_CLUSTER  = 'fastapi-cluster'
         ECS_SERVICE  = 'fastapi-app'
