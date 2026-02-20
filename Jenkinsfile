@@ -33,7 +33,7 @@ pipeline {
         stage('Push to ECR') {
             steps {
                 withCredentials([[$class: 'AmazonWebServicesCredentialsBinding',
-                                  credentialsId: 'aws-credentials',
+                                  credentialsId: 'f6dd3d81-5bf3-4b86-9407-0b5a4b2e84e5',
                                   accessKeyVariable: 'AWS_ACCESS_KEY_ID',
                                   secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) {
                     sh """
@@ -49,7 +49,7 @@ pipeline {
         stage('Deploy to ECS') {
             steps {
                 withCredentials([[$class: 'AmazonWebServicesCredentialsBinding',
-                                  credentialsId: 'aws-credentials',
+                                  credentialsId: 'f6dd3d81-5bf3-4b86-9407-0b5a4b2e84e5',
                                   accessKeyVariable: 'AWS_ACCESS_KEY_ID',
                                   secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) {
                     sh """
