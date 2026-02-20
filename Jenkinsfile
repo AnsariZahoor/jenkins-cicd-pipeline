@@ -20,13 +20,13 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh "docker build -f app.Dockerfile --target production -t ${FULL_IMAGE}:${IMAGE_TAG} -t ${FULL_IMAGE}:latest ."
+                sh "docker buildx build --platform linux/amd64 -f app.Dockerfile --target production -t ${FULL_IMAGE}:${IMAGE_TAG} -t ${FULL_IMAGE}:latest ."
             }
         }
 
         stage('Test') {
             steps {
-                sh "docker build -f app.Dockerfile --target test ."
+                sh "docker buildx build --platform linux/amd64 -f app.Dockerfile --target test ."
             }
         }
 
